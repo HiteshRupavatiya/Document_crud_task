@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDocumentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::controller(UserController::class)->prefix('user')->group(function () {
+    Route::get('login-view', 'loginUser')->name('login-view');
+    Route::post('login', 'login')->name('login');
+    Route::get('register-view', 'registerUser')->name('register-view');
+    Route::post('register', 'register')->name('register');
+    Route::get('logout', 'logout')->name('logout');
+    Route::get('home', 'home')->name('home');
+});
+
+Route::controller(UserDocumentController::class)->prefix('document')->group(function () {
+    Route::get('index', 'index')->name('document.index');
+    Route::get('create', 'create')->name('document.create');
+    Route::post('store', 'store')->name('document.store');
+    Route::get('edit/{id}', 'edit')->name('document/edit');
+    Route::put('update/{id}', 'update')->name('document.update');
+    Route::delete('delete/{id}', 'delete')->name('document.delete');
 });
