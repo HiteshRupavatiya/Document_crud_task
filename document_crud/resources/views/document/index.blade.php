@@ -30,7 +30,7 @@
                             <a href="">Edit</a>
                         </td>
                         <td>
-                            <form action="{{route('document.delete', $document->id)}}" method="post">
+                            <form action="{{route('user-document.delete', $document->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" value="Delete" class="btn btn-danger">

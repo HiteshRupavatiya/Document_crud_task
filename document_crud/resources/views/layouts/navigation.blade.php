@@ -12,11 +12,21 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Document Type
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('document.create') }}">Add Document Type</a>
+                        <a class="dropdown-item" href="{{ route('document.index') }}">Show Document Type</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Document
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('document.create') }}">Add Document</a>
-                        <a class="dropdown-item" href="{{ route('document.index') }}">Show Document</a>
+                        <a class="dropdown-item" href="{{ route('user-document.create') }}">Add Document</a>
+                        <a class="dropdown-item" href="{{ route('user-document.index') }}">Show Document</a>
                     </div>
                 </li>
                 <li class="nav-item">

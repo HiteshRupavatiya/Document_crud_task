@@ -8,7 +8,7 @@
                 <strong>{{ $message }}</strong>
             </div>
         @endif
-        <form action="{{ route('document.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('user-document.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-2 offset-md-1">

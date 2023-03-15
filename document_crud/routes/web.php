@@ -29,11 +29,16 @@ Route::controller(UserController::class)->prefix('user')->group(function () {
     Route::get('home', 'home')->name('home');
 });
 
-Route::controller(UserDocumentController::class)->prefix('document')->group(function () {
+Route::controller(UserDocumentController::class)->prefix('user-document')->group(function () {
+    Route::get('index', 'index')->name('user-document.index');
+    Route::get('create', 'create')->name('user-document.create');
+    Route::post('store', 'store')->name('user-document.store');
+    Route::get('edit/{id}', 'edit')->name('user-document/edit');
+    Route::put('update/{id}', 'update')->name('user-document.update');
+    Route::delete('delete/{id}', 'delete')->name('user-document.delete');
+});
+
+Route::controller(DocumentController::class)->prefix('document')->group(function () {
     Route::get('index', 'index')->name('document.index');
     Route::get('create', 'create')->name('document.create');
-    Route::post('store', 'store')->name('document.store');
-    Route::get('edit/{id}', 'edit')->name('document/edit');
-    Route::put('update/{id}', 'update')->name('document.update');
-    Route::delete('delete/{id}', 'delete')->name('document.delete');
 });

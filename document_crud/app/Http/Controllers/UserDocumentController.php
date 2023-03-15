@@ -51,7 +51,7 @@ class UserDocumentController extends Controller
             'status'      => true,
         ]);
 
-        return redirect()->route('document.create')->withSuccess('Image Uploaded Successfully');
+        return redirect()->route('user-document.create')->withSuccess('Image Uploaded Successfully');
     }
 
     public function edit($id)
@@ -70,6 +70,6 @@ class UserDocumentController extends Controller
         foreach ($userDocument->path as $file) {
             unlink('public/files/' . $file);
         }
-        return redirect()->route('document.index');
+        return redirect()->route('user-document.index')->withSuccess('Image Deleted Successfully');
     }
 }
